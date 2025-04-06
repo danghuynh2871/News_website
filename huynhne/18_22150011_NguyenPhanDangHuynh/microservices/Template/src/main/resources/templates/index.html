@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <title>Huỳnh Blogger</title>
+    <meta name="description" content="Blog Website" />
+    <meta name="keywords" content="blog, lifestyle, travel" />
+    
+</head>
+
+<body>
+    <div layout:fragment="main-content">
+        <!-- Slider Section -->
+        <section class="slider">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slide-arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="https://img.freepik.com/free-photo/couple-travelers-pointing-directions_23-2147643192.jpg" alt="Couple traveling">
+                            <div class="slide-text">Your Text</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://img.freepik.com/free-photo/medium-shot-man-carrying-backpack_23-2149137146.jpg" alt="Man at sea">
+                            <div class="slide-text">Your Text</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://img.freepik.com/free-photo/joyful-young-woman-raising-hands-sky_23-2148149933.jpg" alt="Woman celebrating">
+                            <div class="slide-text">Your Text</div>
+                        </div>
+                    </div>
+                    <div class="slide-arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="content-area">
+                <section class="features">
+                    <h2>Features</h2>
+                
+                    <article class="post">
+                        <div class="post-image">
+                            <img src="https://img.freepik.com/free-photo/woman-with-luggage-medical-mask-airport-pandemic_23-2148789911.jpg" alt="Woman with luggage">
+                        </div>
+                        <div class="post-content">
+                            <h3>Your title here</h3>
+                            <p>Lorem ipsum dolor sit amet, eder iut consetetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.</p>
+                            <a href="#" class="read-more" data-bs-toggle="modal" data-bs-target="#post1Modal">Read More</a>
+                            <div class="post-meta">
+                                <div class="comments">
+                                    <i class="far fa-comment"></i>
+                                    <span>1</span>
+                                </div>
+                                <div class="share">
+                                    <span>Share</span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post horizontal">
+                        <div class="post-content">
+                            <h3>Your title here</h3>
+                            <p>Lorem ipsum dolor sit amet, eder iut consetetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.</p>
+                            <a href="#" class="read-more">Read More</a>
+                            <div class="post-meta">
+                                <div class="comments">
+                                    <i class="far fa-comment"></i>
+                                    <span>1</span>
+                                </div>
+                                <div class="share">
+                                    <span>Share</span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-image">
+                            <img src="https://img.freepik.com/free-photo/young-male-traveler-hiking-alone-with-copy-space_23-2149119538.jpg" alt="Man hiking">
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-image">
+                            <img src="https://img.freepik.com/free-photo/man-holding-his-girlfriend-his-back-with-copy-space_23-2148714938.jpg" alt="Couple travelers">
+                        </div>
+                        <div class="post-content">
+                            <h3>Your title here</h3>
+                            <p>Lorem ipsum dolor sit amet, eder iut consetetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.</p>
+                            <a href="#" class="read-more">Read More</a>
+                            <div class="post-meta">
+                                <div class="comments">
+                                    <i class="far fa-comment"></i>
+                                    <span>1</span>
+                                </div>
+                                <div class="share">
+                                    <span>Share</span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Add modals at the end of body, before scripts -->
+                    <div class="modal fade" id="post1Modal" tabindex="-1" aria-labelledby="post1ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="post1ModalLabel">Your title here</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="https://img.freepik.com/free-photo/woman-with-luggage-medical-mask-airport-pandemic_23-2148789911.jpg" 
+                                         alt="Woman with luggage" class="img-fluid mb-4">
+                                    <p>Lorem ipsum dolor sit amet, eder iut consetetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.</p>
+                                    <p>Additional content for the full post goes here. This can include more paragraphs, images, or any other content you want to show in the detailed view.</p>
+                                    <div class="post-meta mt-4">
+                                        <div class="comments">
+                                            <i class="far fa-comment"></i>
+                                            <span>1</span>
+                                        </div>
+                                        <div class="share">
+                                            <span>Share</span>
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat for other posts with unique IDs (post2Modal, post3Modal) -->
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <section class="categories">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                        <li><a href="#">Section</a> <span>(9)</span></li>
+                    </ul>
+                </section>
+
+                <section class="featured-image">
+                    <img src="https://img.freepik.com/free-photo/full-shot-woman-travel-concept_23-2149153259.jpg" alt="Travel concept">
+                </section>
+
+                <section class="hashtags">
+                    <h2>Hashtags</h2>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">Tag</a>
+                        <a href="#" class="tag">Tag</a>
+                        <a href="#" class="tag">Tag</a>
+                        <a href="#" class="tag">Tag</a>
+                        <a href="#" class="tag">Tag</a>
+                        <a href="#" class="tag">Tag</a>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div layout:fragment="modals">
+        <!-- ... existing modal content ... -->
+    </div>
+
+    <!-- Scripts -->
+    <div layout:fragment="scripts">
+        <script th:src="@{/default/js/custom.js}"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Tin tức</title>
+</head>
+<body>
+    <div layout:fragment="main-content">
+        <div class="container">
+            <div class="row article-grid">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Tin tức mới nhất</h2>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" th:each="product : ${products}">
+                    <div class="article-card">
+                        <img th:if="${product.hinhAnh != null and !product.hinhAnh.isEmpty()}" 
+                             th:src="@{${product.hinhAnh}}"
+                             class="article-image" alt="Article Image">
+                        <img th:unless="${product.hinhAnh != null and !product.hinhAnh.isEmpty()}" 
+                             th:src="@{/images/default-article.jpg}" 
+                             class="article-image" alt="Default Image">
+                        <div class="article-info">
+                            <h3 class="article-title" th:text="${product.ten}">Tiêu đề bài viết</h3>
+                            <div class="article-meta">
+                                <i class="fas fa-user me-2"></i>
+                                <span th:text="${product.tacGia}">Tác giả</span>
+                                <i class="fas fa-calendar-alt ms-3 me-2"></i>
+                                <span th:text="${#dates.format(product.ngayDang, 'dd/MM/yyyy')}">Ngày đăng</span>
+                            </div>
+                            <p class="article-description" th:text="${#strings.abbreviate(product.moTa, 150)}">Tóm tắt</p>
+                        </div>
+                        <div class="article-footer">
+                            <div class="view-count">
+                                <i class="fas fa-eye me-1"></i>
+                                <span th:text="${product.luotXem}">0</span> lượt xem
+                            </div>
+                            <span th:if="${product.trangThai}" 
+                                  class="status-badge status-active">
+                                <i class="fas fa-check-circle me-1"></i>Đang hiển thị
+                            </span>
+                            <span th:unless="${product.trangThai}" 
+                                  class="status-badge status-inactive">
+                                <i class="fas fa-times-circle me-1"></i>Đã ẩn
+                            </span>
+                            <a th:href="@{/products/{id}(id=${product.ma})}" 
+                               class="btn btn-primary btn-sm">
+                                <i class="fas fa-arrow-right me-1"></i>Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

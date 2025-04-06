@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8" />
+    <title>Trang không tìm thấy</title>
+</head>
+<body>
+    <div layout:fragment="main-content">
+        <div class="error-container">
+            <div class="error-code">
+                <span>4</span>
+                <div class="error-circle">
+                    <div class="error-face">
+                        <div class="error-eye"></div>
+                        <div class="error-eye"></div>
+                        <div class="error-mouth"></div>
+                    </div>
+                </div>
+                <span>4</span>
+            </div>
+            
+            <h2 class="error-title">Oops! Trang không tìm thấy</h2>
+            <p class="error-message">Có vẻ như bạn đã đi lạc. Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.</p>
+            
+            <div class="error-buttons">
+                <a th:href="@{/}" class="error-btn primary-btn">
+                    <i class="fas fa-home"></i> Về trang chủ
+                </a>
+                <a href="javascript:history.back()" class="error-btn secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Quay lại
+                </a>
+            </div>
+            
+            <div class="error-footer">
+                <p>Bạn cần hỗ trợ? <a th:href="@{/contact-us}" class="error-contact">Liên hệ với chúng tôi</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

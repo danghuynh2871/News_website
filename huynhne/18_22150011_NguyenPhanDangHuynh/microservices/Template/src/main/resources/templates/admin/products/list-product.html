@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>News Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section layout:fragment="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3">News Articles Management</h1>
+                    <a th:href="@{/admin/products/product-form-insert}" class="btn btn-primary">
+                        <i class="fas fa-plus-circle me-2"></i>Add New Article
+                    </a>
+                </div>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-light">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Hình ảnh</th>
+                                    <th scope="col">Tiêu đề</th>
+                                    <th scope="col">Tóm tắt</th>
+                                    <th scope="col">Tác giả</th>
+                                    <th scope="col">Ngày đăng</th>
+                                    <th scope="col">Lượt xem</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col" class="text-center">Thao tác</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="product:${products}">
+                                    <th scope="row" th:text="${product.ma}"></th>
+                                    <td>
+                                        <img th:if="${product.hinhAnh}" 
+                                             th:src="@{${product.hinhAnh}}" 
+                                             class="img-thumbnail" style="max-height: 50px" alt="Thumbnail">
+                                        <span th:unless="${product.hinhAnh}" class="text-muted">
+                                            <i class="fas fa-image"></i> No image
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <strong th:text="${product.ten}"></strong>
+                                    </td>
+                                    <td>
+                                        <p class="text-muted mb-0" th:text="${product.moTa}"></p>
+                                    </td>
+                                    <td th:text="${product.tacGia}"></td>
+                                    <td th:text="${#dates.format(product.ngayDang, 'dd/MM/yyyy HH:mm')}"></td>
+                                    <td th:text="${product.luotXem}"></td>
+                                    <td>
+                                        <span th:if="${product.trangThai}" class="badge bg-success">Hoạt động</span>
+                                        <span th:unless="${product.trangThai}" class="badge bg-danger">Không hoạt động</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="btn-group" role="group">
+                                            <a th:href="@{/admin/products/product-form-update(id=${product.ma})}" 
+                                               class="btn btn-sm btn-outline-warning" title="Sửa">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a th:href="@{/admin/products/delete(id=${product.ma})}"
+                                               class="btn btn-sm btn-outline-danger ms-2" 
+                                               onclick="return confirm('Bạn có chắc chắn muốn xóa bài viết này? Hành động này không thể hoàn tác.')"
+                                               title="Xóa">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

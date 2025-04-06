@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories - Huỳnh Blogger</title>
+</head>
+<body>
+<div layout:fragment="main-content">
+    <div class="categories-hero">
+        <div class="container">
+            <h1>Blog Categories</h1>
+            <p class="lead">Explore Our Different Topics</p>
+        </div>
+    </div>
+
+    <div class="categories-content">
+        <div class="container">
+            <div class="row">
+                <!-- Technology Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-laptop-code category-icon"></i>
+                        <h3 class="category-title">Technology</h3>
+                        <p class="category-description">Latest tech news, tutorials, and programming guides</p>
+                        <span class="post-count">15 posts</span>
+                    </div>
+                </div>
+
+                <!-- Lifestyle Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-heart category-icon"></i>
+                        <h3 class="category-title">Lifestyle</h3>
+                        <p class="category-description">Tips for better living, health, and wellness</p>
+                        <span class="post-count">12 posts</span>
+                    </div>
+                </div>
+
+                <!-- Travel Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-plane category-icon"></i>
+                        <h3 class="category-title">Travel</h3>
+                        <p class="category-description">Travel experiences, guides, and recommendations</p>
+                        <span class="post-count">8 posts</span>
+                    </div>
+                </div>
+
+                <!-- Food Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-utensils category-icon"></i>
+                        <h3 class="category-title">Food</h3>
+                        <p class="category-description">Recipes, restaurant reviews, and culinary adventures</p>
+                        <span class="post-count">10 posts</span>
+                    </div>
+                </div>
+
+                <!-- Photography Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-camera category-icon"></i>
+                        <h3 class="category-title">Photography</h3>
+                        <p class="category-description">Photography tips, techniques, and showcases</p>
+                        <span class="post-count">6 posts</span>
+                    </div>
+                </div>
+
+                <!-- Books Category -->
+                <div class="col-md-4">
+                    <div class="category-card text-center">
+                        <i class="fas fa-book category-icon"></i>
+                        <h3 class="category-title">Books</h3>
+                        <p class="category-description">Book reviews, reading lists, and literary discussions</p>
+                        <span class="post-count">9 posts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

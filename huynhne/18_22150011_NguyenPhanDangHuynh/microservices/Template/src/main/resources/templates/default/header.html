@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="blog-name">Huỳnh Blogger</div>
+            <nav class="nav-menu">
+                <a href="/" class="active">Home</a>
+                <a href="/about-us">About</a>
+                <a href="/features">Features</a>
+                <a href="/categories">Categories</a>
+                <a href="/contact-us">Contact</a>
+                <a href="/products">Product</a>
+                <input type="search" placeholder="Search" class="search-box">
+                <a href="/login" class="login-icon" th:if="${#authentication.principal == 'anonymousUser'}">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="user-actions" th:unless="${#authentication.principal == 'anonymousUser'}">
+                    <div class="dropdown">
+                        <a href="#" class="login-icon dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i>
+                            <span th:text="${#authentication.principal.username}"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                            <li sec:authorize="hasRole('ROLE_ADMIN')"><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
+                            <li sec:authorize="hasRole('ROLE_ADMIN')"><a class="dropdown-item" href="/system">System Management</a></li>
+                            <li>
+                                <form th:action="@{/logout}" method="post">
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Features - Huỳnh Blogger</title>
+    <style>
+        /* Features Page Styles */
+        .features-hero {
+          background: linear-gradient(rgba(0,48,73,0.8), rgba(0,48,73,0.8)), url('/images/features-bg.jpg');
+          background-size: cover;
+          background-position: center;
+          padding: 100px 0;
+          text-align: center;
+          color: #ffffff;
+          margin-bottom: 60px;
+        }
+
+        .features-hero h1 {
+          font-size: 48px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        .features-hero .lead {
+          font-size: 24px;
+          opacity: 0.9;
+        }
+
+        .features-content {
+          padding: 60px 0;
+        }
+
+        .feature-card {
+          background: #ffffff;
+          padding: 40px 30px;
+          border-radius: 15px;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+          margin-bottom: 30px;
+          transition: all 0.3s ease;
+          height: 100%;
+        }
+
+        .feature-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+          font-size: 40px;
+          color: #003049;
+          margin-bottom: 25px;
+          transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+          transform: scale(1.1);
+        }
+
+        .feature-title {
+          font-size: 24px;
+          color: #2d3748;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        .feature-description {
+          color: #4a5568;
+          font-size: 16px;
+          line-height: 1.6;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+          .features-hero {
+              padding: 60px 0;
+          }
+          
+          .features-hero h1 {
+              font-size: 36px;
+          }
+          
+          .features-hero .lead {
+              font-size: 20px;
+          }
+          
+          .feature-card {
+              padding: 30px 20px;
+              margin-bottom: 20px;
+          }
+          
+          .feature-icon {
+              font-size: 32px;
+          }
+          
+          .feature-title {
+              font-size: 20px;
+          }
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="main-content">
+    <div class="features-hero">
+        <div class="container">
+            <h1>Our Features</h1>
+            <p class="lead">Discover What Makes Us Special</p>
+        </div>
+    </div>
+
+    <div class="features-content">
+        <div class="container">
+            <div class="row">
+                <!-- Content Management -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-edit feature-icon"></i>
+                        <h3 class="feature-title">Content Management</h3>
+                        <p class="feature-description">Easy-to-use interface for creating and managing your blog posts</p>
+                    </div>
+                </div>
+
+                <!-- Responsive Design -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <h3 class="feature-title">Responsive Design</h3>
+                        <p class="feature-description">Perfect viewing experience across all devices and screen sizes</p>
+                    </div>
+                </div>
+
+                <!-- SEO Optimization -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-search feature-icon"></i>
+                        <h3 class="feature-title">SEO Optimization</h3>
+                        <p class="feature-description">Built-in tools to help your content rank better in search engines</p>
+                    </div>
+                </div>
+
+                <!-- Social Integration -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-share-alt feature-icon"></i>
+                        <h3 class="feature-title">Social Integration</h3>
+                        <p class="feature-description">Easy sharing and connection with all major social media platforms</p>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3 class="feature-title">Advanced Security</h3>
+                        <p class="feature-description">Strong security measures to protect your content and users</p>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3 class="feature-title">Analytics</h3>
+                        <p class="feature-description">Detailed insights about your blog's performance and audience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
